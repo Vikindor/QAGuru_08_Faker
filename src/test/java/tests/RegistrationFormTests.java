@@ -31,7 +31,7 @@ public class RegistrationFormTests extends TestBase {
                 .setNumber(testData.phone)
                 .setDateOfBirth(testData.birthDay, testData.birthMonth, testData.birthYear)
                 .setSubject(testData.subject)
-                .setHobbies(testData.hobbie)
+                .setHobbies(testData.hobby)
                 .setPicture(testData.picture)
                 .setAddress(testData.address)
                 .setState(testData.state)
@@ -43,7 +43,7 @@ public class RegistrationFormTests extends TestBase {
                 .checkSubmitResult(registrationPage.tableMobile, testData.phone)
                 .checkSubmitResult(registrationPage.tableDateOfBirth, testData.birthFull)
                 .checkSubmitResult(registrationPage.tableSubjects, testData.subject)
-                .checkSubmitResult(registrationPage.tableHobbies, testData.hobbie)
+                .checkSubmitResult(registrationPage.tableHobbies, testData.hobby)
                 .checkSubmitResult(registrationPage.tablePicture, testData.picture)
                 .checkSubmitResult(registrationPage.tableAddress, testData.address)
                 .checkSubmitResult(registrationPage.tableStateAndCity, testData.stateAndCity);

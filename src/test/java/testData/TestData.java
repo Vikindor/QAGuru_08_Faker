@@ -18,7 +18,7 @@ public class TestData {
             birthYear = String.valueOf(faker.number().numberBetween(1900, 2100)),
             birthFull = String.format("%s %s,%s", birthDay, birthMonth, birthYear),
             subject = getSubject(),
-            hobbie = getHobbie(),
+            hobby = getHobbie(),
             picture = "file_example_JPG_100kB.jpg",
             address = faker.address().fullAddress(),
             city = getCity(),
