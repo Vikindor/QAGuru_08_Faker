@@ -15,7 +15,7 @@ public class TestData {
             phone = faker.phoneNumber().subscriberNumber(10),
             birthDay = String.valueOf(faker.number().numberBetween(1, 28)),
             birthMonth = getMonth(),
-            birthYear = String.valueOf(faker.number().numberBetween(1900, 2050)),
+            birthYear = String.valueOf(faker.number().numberBetween(1900, 2100)),
             birthFull = String.format("%s %s,%s", birthDay, birthMonth, birthYear),
             subject = getSubject(),
             hobbie = getHobbie(),
