@@ -60,22 +60,4 @@ public class TestData {
         return cityAndState.get(value);
     }
 
-//    public String picture = "file_example_JPG_100kB.jpg",
-//            randomFirstname = randomUtils.getFakerFirstName(),
-//            randomLastName = randomUtils.getFakerLastName(),
-//            fullName = String.format("%s %s", randomFirstname, randomLastName),
-//            randomEmail = randomUtils.getFakerEmail(),
-//            randomGender = randomUtils.getFakerGender(),
-//            randomMobile = randomUtils.getFakerMobile(),
-//            randomDay = randomUtils.getRandomDay(),
-//            randomMonth = randomUtils.getRandomMonth(),
-//            randomYear = randomUtils.getRandomYear(),
-//            birthDay = String.format("%s %s,%s", randomDay, randomMonth, randomYear),
-//            randomSubject = randomUtils.getFakerSubjects(),
-//            randomHobbie = randomUtils.getFakerHobbie(),
-//            randomAddress = randomUtils.getFakerStreetAddress(),
-//            randomState = randomUtils.randomState,
-//            randomCity = randomUtils.getFakerCity(),
-//            stateAndCity = String.format("%s %s", randomState, randomCity);
-
 }
