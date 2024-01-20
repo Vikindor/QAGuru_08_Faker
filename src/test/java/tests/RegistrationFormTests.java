@@ -1,80 +1,52 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
+import testData.*;
 import pages.RegistrationPage;
-import utils.RandomUtils;
 
 public class RegistrationFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
-    RandomUtils randomUtils = new RandomUtils();
-
-    String randomFirstname = randomUtils.getFakerFirstName(),
-            randomLastName = randomUtils.getFakerLastName(),
-            fullName = String.format("%s %s", randomFirstname, randomLastName),
-            randomEmail = randomUtils.getFakerEmail(),
-            randomGender = randomUtils.getFakerGender(),
-            randomMobile = randomUtils.getFakerMobile(),
-            randomDay = RandomUtils.getRandomDay(),
-            randomMonth = RandomUtils.getRandomMonth(),
-            randomYear = RandomUtils.getRandomYear(),
-            birthDay = String.format("%s %s,%s", randomDay, randomMonth, randomYear),
-            randomSubject = randomUtils.getFakerSubjects(),
-            randomHobbie = randomUtils.getFakerHobbie(),
-            randomAddress = randomUtils.getFakerStreetAddress(),
-            randomState = RandomUtils.randomState,
-            randomCity = RandomUtils.getFakerCity(),
-            stateAndCity = String.format("%s %s", randomState, randomCity),
-            picture = "file_example_JPG_100kB.jpg",
-            tableName = "Student Name",
-            tableEmail = "Student Email",
-            tableGender = "Gender",
-            tableMobile = "Mobile",
-            tableDateOfBirth = "Date of Birth",
-            tableSubjects = "Subjects",
-            tableHobbies = "Hobbies",
-            tablePicture = "Picture",
-            tableAddress = "Address",
-            tableStateAndCity = "State and City";
+    TestData testData = new TestData();
 
     @Test
     void minimalRegistrationTest() {
         registrationPage.openPage()
-                .setFirstName(randomFirstname)
-                .setLastName(randomLastName)
-                .setGender(randomGender)
-                .setNumber(randomMobile)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setGender(testData.gender)
+                .setNumber(testData.phone)
                 .submit()
-                .checkSubmitResult(tableName, fullName)
-                .checkSubmitResult(tableGender, randomGender)
-                .checkSubmitResult(tableMobile, randomMobile);
+                .checkSubmitResult(registrationPage.tableName, testData.fullName)
+                .checkSubmitResult(registrationPage.tableGender, testData.gender)
+                .checkSubmitResult(registrationPage.tableMobile, testData.phone);
     }
 
     @Test
     void fullRegistrationTest() {
         registrationPage.openPage()
-                .setFirstName(randomFirstname)
-                .setLastName(randomLastName)
-                .setEmail(randomEmail)
-                .setGender(randomGender)
-                .setNumber(randomMobile)
-                .setDateOfBirth(randomDay, randomMonth, randomYear)
-                .setSubject(randomSubject)
-                .setHobbies(randomHobbie)
-                .setPicture(picture)
-                .setAddress(randomAddress)
-                .setState(randomState)
-                .setCity(randomCity)
+                .setFirstName(testData.firstName)
+                .setLastName(testData.lastName)
+                .setEmail(testData.email)
+                .setGender(testData.gender)
+                .setNumber(testData.phone)
+                .setDateOfBirth(testData.birthDay, testData.birthMonth, testData.birthYear)
+                .setSubject(testData.subject)
+                .setHobbies(testData.hobbie)
+                .setPicture(testData.picture)
+                .setAddress(testData.address)
+                .setState(testData.state)
+                .setCity(testData.city)
                 .submit()
-                .checkSubmitResult(tableName, fullName)
-                .checkSubmitResult(tableEmail, randomEmail)
-                .checkSubmitResult(tableGender, randomGender)
-                .checkSubmitResult(tableMobile, randomMobile)
-                .checkSubmitResult(tableDateOfBirth, birthDay)
-                .checkSubmitResult(tableSubjects, randomSubject)
-                .checkSubmitResult(tableHobbies, randomHobbie)
-                .checkSubmitResult(tablePicture, picture)
-                .checkSubmitResult(tableAddress, randomAddress)
-                .checkSubmitResult(tableStateAndCity, stateAndCity);
+                .checkSubmitResult(registrationPage.tableName, testData.fullName)
+                .checkSubmitResult(registrationPage.tableEmail, testData.email)
+                .checkSubmitResult(registrationPage.tableGender, testData.gender)
+                .checkSubmitResult(registrationPage.tableMobile, testData.phone)
+                .checkSubmitResult(registrationPage.tableDateOfBirth, testData.birthFull)
+                .checkSubmitResult(registrationPage.tableSubjects, testData.subject)
+                .checkSubmitResult(registrationPage.tableHobbies, testData.hobbie)
+                .checkSubmitResult(registrationPage.tablePicture, testData.picture)
+                .checkSubmitResult(registrationPage.tableAddress, testData.address)
+                .checkSubmitResult(registrationPage.tableStateAndCity, testData.stateAndCity);
     }
 
     @Test

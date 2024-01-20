@@ -25,6 +25,17 @@ public class RegistrationPage {
             cityInput = $("#city"),
             submitButton = $("#submit");
 
+    public String tableName = "Student Name",
+            tableEmail = "Student Email",
+            tableGender = "Gender",
+            tableMobile = "Mobile",
+            tableDateOfBirth = "Date of Birth",
+            tableSubjects = "Subjects",
+            tableHobbies = "Hobbies",
+            tablePicture = "Picture",
+            tableAddress = "Address",
+            tableStateAndCity = "State and City";
+
     CalendarComponent calendarComponent = new CalendarComponent();
     ModalWindowComponent modalWindowComponent = new ModalWindowComponent();
 
@@ -77,7 +88,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setPicture(String filename) {
-        pictureInput.uploadFromClasspath("img/"+filename);
+        pictureInput.uploadFromClasspath("img/" + filename);
         return this;
     }
 
