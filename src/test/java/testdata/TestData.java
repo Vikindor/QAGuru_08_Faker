@@ -1,4 +1,4 @@
-package testData;
+package testdata;
 
 import com.github.javafaker.Faker;
 import java.util.HashMap;
@@ -7,18 +7,19 @@ public class TestData {
 
     Faker faker = new Faker();
 
+    public int birthDay = faker.number().numberBetween(1, 28);
+
     public String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             fullName = String.format("%s %s", firstName, lastName),
             email = faker.internet().emailAddress(firstName.toLowerCase() + "." + lastName.toLowerCase()),
             gender = getGender(),
             phone = faker.phoneNumber().subscriberNumber(10),
-            birthDay = String.valueOf(faker.number().numberBetween(1, 28)),
             birthMonth = getMonth(),
             birthYear = String.valueOf(faker.number().numberBetween(1900, 2100)),
             birthFull = String.format("%s %s,%s", birthDay, birthMonth, birthYear),
             subject = getSubject(),
-            hobby = getHobbie(),
+            hobby = getHobby(),
             picture = "file_example_JPG_100kB.jpg",
             address = faker.address().fullAddress(),
             city = getCity(),
@@ -30,7 +31,7 @@ public class TestData {
                 "July", "August", "September", "October", "November", "December");
     }
 
-    private String getHobbie() {
+    private String getHobby() {
         return faker.options().option("Sports", "Reading", "Music");
     }
 
